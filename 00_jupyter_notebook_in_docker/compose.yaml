@@ -1,0 +1,16 @@
+
+services:
+  jupyter:
+    container_name: jupyter
+    hostname: jupyter
+    build:
+      context: ./genai_01/
+    ports:
+      - "8888:8888"
+    
+    volumes:
+      - ./genai_01:/code/
+    
+networks:
+  default:
+    driver: bridge
